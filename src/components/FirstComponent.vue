@@ -9,7 +9,7 @@ export default {
   name: 'FirstComponent',
   data() {
     return {
-      message: 'My First Component In Vue.js!'
+      message: 'Hello Vue!'
     }
   }
 }
