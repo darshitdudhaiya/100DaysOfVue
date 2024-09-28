@@ -1,11 +1,13 @@
 <script setup>
 import FirstComponent from './components/FirstComponent.vue';
-import DataBinding from './components/DataBinding.vue';
+import DataBinding from './components/Databinding.vue';
+import HomeComponent from './components/HomeComponent.vue';
 </script>
 
 <template>
-  <FirstComponent/>
-  <DataBinding/>
+  <!-- <FirstComponent/> -->
+  <!-- <DataBinding/> -->
+  <HomeComponent/>
 </template>
 
 <style scoped>
