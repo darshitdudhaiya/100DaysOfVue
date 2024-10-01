@@ -1,10 +1,11 @@
 <template>
   <div>
-    <h1 v-on:mouseover="textHovered()">Hover Me</h1>
-    <input type="text" v-model="count" />
-    <h1>Count: {{ count }}</h1>
-
-    <br />
+    <h1>Home Component</h1>
+    <input type="email" v-model="email" placeholder="enter email" />
+    <br /><br />
+    <input type="password" v-model="password" placeholder="enter password" />
+    <br /><br />
+    <button type="button" @click="getValues">Get Values</button>
   </div>
 </template>
 
@@ -13,7 +14,13 @@ export default {
   name: 'HomeComponent',
   data() {
     return {
-      count: 0
+      email: null,
+      password: null
+    }
+  },
+  methods: {
+    getValues() {
+      console.warn('Fuctions Called', this.email, this.password)
     }
   }
 }
