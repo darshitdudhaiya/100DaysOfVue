@@ -1,30 +1,27 @@
 <template>
   <div>
-    <h1>Home Component</h1>
-    <input type="email" v-model="email" placeholder="enter email" />
-    <br /><br />
-    <input type="password" v-model="password" placeholder="enter password" />
-    <br /><br />
-    <button type="button" @click="getValues">Get Values</button>
+    <h1>Conditional Rendering</h1>
+    <button @click="toggle">Toggle Visibility</button>
+    <p v-if="isVisible">Visible with v-if</p>
+    <p v-show="isVisible">Visible with v-show</p>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'HomeComponent',
   data() {
     return {
-      email: null,
-      password: null
+      isVisible: true
     }
   },
   methods: {
-    getValues() {
-      console.warn('Fuctions Called', this.email, this.password)
+    toggle() {
+      this.isVisible = !this.isVisible;
     }
   }
 }
 </script>
+
 
 <style scoped>
 h1 {
