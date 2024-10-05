@@ -1,6 +1,23 @@
 <template>
   <div class="main-container">
-    <h1>Cart Total: {{ totalPrice }}</h1>
+    <div>
+      <h1>For Loops in Vue.js</h1>
+
+      <br />
+
+      <ul>
+        <li v-for="item in technology" :key="item">{{ item }}</li>
+      </ul>
+
+      <br />
+      <br />
+
+      <ul>
+        <li v-for="(item,index) in users" :key="index">
+          {{ index + 1 }} Name : {{ item.name }} and Email is {{ item.email }}
+        </li>
+      </ul>
+    </div>
   </div>
 </template>
 
@@ -8,15 +25,13 @@
 export default {
   data() {
     return {
-      items: [
-        { name: 'Apple', price: 2 },
-        { name: 'Banana', price: 1 }
+      technology: ['PHP', 'Laravel', 'Wordpress', 'Javascript'],
+
+      users: [
+        { name: 'Darshit Dudhaiya', email: 'darshitdudhaiya201@gmail.com' },
+        { name: 'Dren Fury', email: 'drenfury@gmail.com' },
+        { name: 'Robert Downey Junior', email: 'robert@gmail.com' }
       ]
-    }
-  },
-  computed: {
-    totalPrice() {
-      return this.items.reduce((sum, item) => sum + item.price, 0)
     }
   }
 }
@@ -32,5 +47,9 @@ h1 {
   justify-content: center;
   min-height: 80vh;
   align-items: center;
+}
+
+ul li {
+  font-size: x-large;
 }
 </style>
