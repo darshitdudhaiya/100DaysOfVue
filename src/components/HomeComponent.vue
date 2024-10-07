@@ -1,23 +1,10 @@
 <template>
-  <div class="main-container">
-    <div>
-      <h1>For Loops in Vue.js</h1>
+  <div class="container">
+    <h1 :class="dynamicClass">Dynamic Classes in Vue</h1>
+    <button class="toggle-button" @click="toggleClass">Toggle Class</button>
 
-      <br />
-
-      <ul>
-        <li v-for="item in technology" :key="item">{{ item }}</li>
-      </ul>
-
-      <br />
-      <br />
-
-      <ul>
-        <li v-for="(item,index) in users" :key="index">
-          {{ index + 1 }} Name : {{ item.name }} and Email is {{ item.email }}
-        </li>
-      </ul>
-    </div>
+    <div :style="dynamicStyle" class="box">Dynamic Style Box</div>
+    <button class="increase-button" @click="increaseSize">Increase Size</button>
   </div>
 </template>
 
@@ -25,31 +12,76 @@
 export default {
   data() {
     return {
-      technology: ['PHP', 'Laravel', 'Wordpress', 'Javascript'],
-
-      users: [
-        { name: 'Darshit Dudhaiya', email: 'darshitdudhaiya201@gmail.com' },
-        { name: 'Dren Fury', email: 'drenfury@gmail.com' },
-        { name: 'Robert Downey Junior', email: 'robert@gmail.com' }
-      ]
+      isActive: false,
+      size: 100
+    }
+  },
+  computed: {
+    dynamicClass() {
+      return {
+        active: this.isActive,
+        inactive: !this.isActive
+      }
+    },
+    dynamicStyle() {
+      return {
+        width: this.size + 'px',
+        height: this.size + 'px',
+        backgroundColor: this.size > 150 ? 'lightgreen' : 'lightcoral'
+      }
+    }
+  },
+  methods: {
+    toggleClass() {
+      this.isActive = !this.isActive
+    },
+    increaseSize() {
+      this.size += 20
     }
   }
 }
 </script>
 
 <style scoped>
-h1 {
-  color: #42b983;
+.container {
+  text-align: center;
+  margin: 20px;
 }
 
-.main-container {
-  display: flex;
-  justify-content: center;
-  min-height: 80vh;
-  align-items: center;
+h2 {
+  margin: 20px 0;
 }
 
-ul li {
-  font-size: x-large;
+.active {
+  color: green;
+  font-weight: bold;
+}
+
+.inactive {
+  color: red;
+  font-weight: bold;
+}
+
+.box {
+  margin-top: 10px;
+  transition: all 0.3s ease;
+}
+
+.toggle-button, .increase-button {
+  margin: 10px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.toggle-button {
+  background-color: #42b983;
+  color: white;
+}
+
+.increase-button {
+  background-color: #3498db;
+  color: white;
 }
 </style>
