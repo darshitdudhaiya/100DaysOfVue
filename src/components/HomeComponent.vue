@@ -1,10 +1,10 @@
 <template>
-  <div class="container">
-    <h1 :class="dynamicClass">Dynamic Classes in Vue</h1>
-    <button class="toggle-button" @click="toggleClass">Toggle Class</button>
+  <div class="watcher-example">
+    <h2>Watcher Example</h2>
+    <p>Enter your age:</p>
+    <input v-model="age" type="number" />
 
-    <div :style="dynamicStyle" class="box">Dynamic Style Box</div>
-    <button class="increase-button" @click="increaseSize">Increase Size</button>
+    <p>{{ message }}</p>
   </div>
 </template>
 
@@ -12,76 +12,43 @@
 export default {
   data() {
     return {
-      isActive: false,
-      size: 100
+      age: 25,
+      message: ''
     }
   },
-  computed: {
-    dynamicClass() {
-      return {
-        active: this.isActive,
-        inactive: !this.isActive
+  watch: {
+    age(newAge) {
+      if (newAge >= 18) {
+        this.message = 'You are an adult.'
+      } else {
+        this.message = 'You are a minor.'
       }
-    },
-    dynamicStyle() {
-      return {
-        width: this.size + 'px',
-        height: this.size + 'px',
-        backgroundColor: this.size > 150 ? 'lightgreen' : 'lightcoral'
-      }
-    }
-  },
-  methods: {
-    toggleClass() {
-      this.isActive = !this.isActive
-    },
-    increaseSize() {
-      this.size += 20
     }
   }
 }
 </script>
 
 <style scoped>
-.container {
+.watcher-example {
+  max-width: 400px;
+  margin: 20px auto;
+  padding: 20px;
   text-align: center;
-  margin: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
 }
 
-h2 {
-  margin: 20px 0;
-}
-
-.active {
-  color: green;
-  font-weight: bold;
-}
-
-.inactive {
-  color: red;
-  font-weight: bold;
-}
-
-.box {
-  margin-top: 10px;
-  transition: all 0.3s ease;
-}
-
-.toggle-button, .increase-button {
-  margin: 10px;
-  padding: 10px 20px;
-  border: none;
+input {
+  padding: 8px;
+  width: 100%;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
   border-radius: 5px;
-  cursor: pointer;
 }
 
-.toggle-button {
-  background-color: #42b983;
-  color: white;
-}
-
-.increase-button {
-  background-color: #3498db;
-  color: white;
+p {
+  font-size: 18px;
+  color: #42b983;
 }
 </style>
+  
