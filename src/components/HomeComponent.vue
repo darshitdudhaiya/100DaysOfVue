@@ -1,54 +1,46 @@
 <template>
-  <div class="watcher-example">
-    <h2>Watcher Example</h2>
-    <p>Enter your age:</p>
-    <input v-model="age" type="number" />
-
-    <p>{{ message }}</p>
+  <div class="container">
+    <h1>Home Component</h1>
+  </div>
+  <div class="container">
+    <ChildComponent :user="user" :details="details" :getData="getData"></ChildComponent>
   </div>
 </template>
 
 <script>
+import ChildComponent from './ChildComponent.vue'
 export default {
+  name: 'HomeComponent',
+  components: {
+    ChildComponent
+  },
   data() {
     return {
-      age: 25,
-      message: ''
+      user: 'Darhit Dudhaiya',
+      details: {
+        name: 'Darhit Dudhaiya',
+        email: 'darhitdudhaiya201@gmail.com'
+      }
     }
   },
-  watch: {
-    age(newAge) {
-      if (newAge >= 18) {
-        this.message = 'You are an adult.'
-      } else {
-        this.message = 'You are a minor.'
-      }
+
+  methods: {
+    getData(){
+      alert('Fuction Called');
     }
   }
 }
 </script>
 
 <style scoped>
-.watcher-example {
-  max-width: 400px;
-  margin: 20px auto;
-  padding: 20px;
-  text-align: center;
-  border: 1px solid #ccc;
-  border-radius: 8px;
+.container {
+  display: flex;
+  justify-content: center;
 }
-
-input {
-  padding: 8px;
-  width: 100%;
-  margin-bottom: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-
-p {
-  font-size: 18px;
-  color: #42b983;
+h1 {
+  font-weight: 500;
+  font-size: 2.6rem;
+  position: relative;
+  top: -10px;
 }
 </style>
-  
