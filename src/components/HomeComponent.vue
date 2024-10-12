@@ -1,31 +1,26 @@
 <template>
   <div class="container">
-    <h1>Main Component</h1>
-    <CardComponent>
-      <template #header>
-        <h2>This is the header content passed from the parent.</h2>
-      </template>
-      <template #body>
-        <p>This is the body content passed from the parent.</p>
-      </template>
-      <template #footer>
-        <button @click="handleClick">Click Me!</button>
-      </template>
-    </CardComponent>
+    <p>HTML Binding In Vue.Js</p>
   </div>
+
+  <!-- Normal Text Binding -->
+  <div class="container">
+    <h1>
+      {{ text }}
+    </h1>
+  </div>
+
+  <!-- HTML Binding with v-html -->
+  <div class="container" v-html="tag"></div>
 </template>
 
 <script>
-import CardComponent from './CardCompnent.vue'
-
 export default {
-  name: 'App',
-  components: {
-    CardComponent
-  },
-  methods: {
-    handleClick() {
-      alert('Button Clicked!')
+  name: 'HomeComponent',
+  data() {
+    return {
+      text: 'Hello, this is normal text',
+      tag: '<h1>This is a HTML Tag rendered using v-html</h1>'
     }
   }
 }
@@ -35,12 +30,14 @@ export default {
 .container {
   display: flex;
   justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  margin-top: 50px;
 }
+
+p {
+  font-size: 70px;
+  color: #42b983;
+}
+
 h1 {
-  font-weight: 600;
-  font-size: 2.5rem;
+  color: #e5e6e8;
 }
 </style>
