@@ -1,13 +1,9 @@
 <script setup>
-import FirstComponent from './components/FirstComponent.vue';
-import DataBinding from './components/Databinding.vue';
-import HomeComponent from './components/HomeComponent.vue';
+import LifecycleComponent from './components/LifecycleComponent.vue';
 </script>
 
 <template>
-  <!-- <FirstComponent/> -->
-  <!-- <DataBinding/> -->
-  <HomeComponent/>
+  <LifecycleComponent/>
 </template>
 
 <style scoped>
