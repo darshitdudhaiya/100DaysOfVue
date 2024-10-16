@@ -12,7 +12,8 @@
   },
   "dependencies": {
     "postcss": "^8.4.47",
-    "vue": "^3.4.29"
+    "vue": "^3.4.29",
+    "vue-router": "^4.4.5"
   },
   "devDependencies": {
     "@rushstack/eslint-patch": "^1.8.0",
