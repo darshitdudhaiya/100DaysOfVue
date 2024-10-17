@@ -1,27 +1,14 @@
 <template>
   <div id="app">
-    <parent-error-handle-component />
+    <parent-bus-component />
   </div>
 </template>
 
 <script>
-import ParentErrorHandleComponent from './components/ParentErrorHandleComponent.vue';
+import ParentBusComponent from './components/ParentBusComponent.vue'
 
 export default {
-    name: 'App',
-    components: { ParentErrorHandleComponent }
+  name: 'App',
+  components: { ParentBusComponent }
 }
 </script>
-
-<style>
-nav {
-  margin-bottom: 20px;
-  gap: 10px;
-  display: flex;
-}
-router-link {
-  margin-right: 15px;
-  text-decoration: none;
-  color: #42b983;
-}
-</style>
