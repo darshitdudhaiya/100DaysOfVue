@@ -1,14 +1,14 @@
 <template>
   <div id="app">
-    <parent-bus-component />
+    <parent-provide-component />
   </div>
 </template>
 
 <script>
-import ParentBusComponent from './components/ParentBusComponent.vue'
+import ParentProvideComponent from './components/ParentProvideComponent.vue'
 
 export default {
   name: 'App',
-  components: { ParentBusComponent }
+  components: { ParentProvideComponent }
 }
 </script>
