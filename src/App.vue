@@ -1,14 +1,16 @@
 <template>
   <div id="app">
-    <parent-provide-component />
+    <transition-component />
   </div>
 </template>
 
 <script>
-import ParentProvideComponent from './components/ParentProvideComponent.vue'
+import TransitionComponent from './components/TransitionComponent.vue'
 
 export default {
   name: 'App',
-  components: { ParentProvideComponent }
+  components: {
+    TransitionComponent
+  }
 }
 </script>
