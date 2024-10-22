@@ -10,10 +10,10 @@
 export default {
   data() {
     return {
-      inputB: ''  
-    };
+      inputB: ''
+    }
   }
-};
+}
 </script>
 
 <style scoped>
