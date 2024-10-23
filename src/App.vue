@@ -1,14 +1,14 @@
 <template>
   <div class="app-container">
-    <TeleportComponent />
+    <SuspenseCompomnent />
   </div>
 </template>
 
 <script>
-import TeleportComponent from './components/TeleportComponent.vue'
+import SuspenseCompomnent from './components/SuspenseComponent.vue'
 export default {
   components: {
-    TeleportComponent
+    SuspenseCompomnent
   }
 }
 </script>
