@@ -1,14 +1,15 @@
 <template>
   <div id="app">
-    <render-function-component :items="['Vue', 'React', 'Angular']" />
+    <router-view>
+    </router-view>
   </div>
 </template>
 
 <script>
-import RenderFunctionComponent from './components/RenderFunctionComponent.vue'
+import HomeComponent from './components/HomeComponent.vue'
 
 export default {
   name: 'App',
-  components: { RenderFunctionComponent }
+  components: { HomeComponent }
 }
 </script>
