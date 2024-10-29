@@ -1,15 +1,14 @@
 <template>
   <div id="app">
-    <router-view>
-    </router-view>
+    <vuex-component />
   </div>
 </template>
 
 <script>
-import HomeComponent from './components/HomeComponent.vue'
+import VuexComponent from './components/VuexComponent.vue'
 
 export default {
   name: 'App',
-  components: { HomeComponent }
+  components: { VuexComponent }
 }
 </script>
